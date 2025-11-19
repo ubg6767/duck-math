@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
 
 :root {
-  --bg-main: #050011;
-  --bg-nav: #0a001f;
-  --accent: #00f5ff;
-  --accent-secondary: #ff00ff;
+  --bg-main: #050011; /* deep space black */
+  --bg-nav: #0a001f; /* darker nav bar */
+  --accent: #00f5ff; /* neon cyan accent */
+  --accent-secondary: #ff00ff; /* neon magenta accent */
   --text-light: #e0e0ff;
   --text-dark: #111;
   --font-main: 'Montserrat', sans-serif;
@@ -124,20 +124,20 @@ nav h1 {
   outline-offset: 2px;
 }
 
-/* Game Grid (Popular Section) */
+/* Game Grid */
 #games {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12vw, 1fr));
-  gap: 1vw;
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 0.6vw;
   padding-bottom: 5vw;
 }
 
 #games img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 15.6vw;
+  width: 15.6vw;
   border-radius: var(--radius);
+  margin: 0.5vw;
   cursor: pointer;
   user-select: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -145,7 +145,7 @@ nav h1 {
   box-shadow: var(--glow);
 }
 #games img:hover {
-  transform: scale(1.08);
+  transform: scale(1.08) rotate(2deg);
   box-shadow: 0 0 30px var(--accent-secondary);
 }
 
@@ -238,7 +238,7 @@ nav h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.85); /* opacity 0.85 */
+  background: rgba(0,0,0,0.75);
   z-index: 2000;
 }
 
@@ -259,4 +259,8 @@ nav h1 {
 
 .motd-box h2 {
   margin: 0 0 0.8em;
-  font-size: clamp(18px, 2.
+  font-size: clamp(18px, 2.2vw, 28px);
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color:
