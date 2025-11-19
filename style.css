@@ -124,13 +124,13 @@ nav h1 {
   outline-offset: 2px;
 }
 
-/* Common Section (Game Grid) */
+/* Game Grid (Popular Section) */
 #games {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 1.2vw;
+  grid-template-columns: repeat(auto-fill, minmax(12vw, 1fr));
+  gap: 1vw;
   justify-items: center;
-  margin-top: 1vw;
+  margin-top: 0.6vw;
   padding-bottom: 5vw;
 }
 
@@ -149,37 +149,31 @@ nav h1 {
   box-shadow: 0 0 30px var(--accent-secondary);
 }
 
-/* Popular Section (Featured) */
+/* Featured Section */
 .featured {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1.5vw;
-  padding: 2vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1vw;
   margin: 6vw 1%;
 }
 
 .featured h1 {
-  grid-column: 1 / -1;
   font-size: clamp(22px, 3.5vw, 54px);
   font-weight: 800;
-  margin: 1vw 0;
+  margin: 1vw;
+  width: 100%;
   text-align: left;
   background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.featured a {
-  position: relative;
-  display: block;
-  text-decoration: none;
-  color: inherit;
-}
-
 .featured img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 12.5vw;
+  width: 12.5vw;
   border-radius: var(--radius);
+  margin: 0.5vw;
   cursor: pointer;
   user-select: none;
   transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
@@ -192,12 +186,18 @@ nav h1 {
 }
 
 .featured .row img {
-  aspect-ratio: 16 / 9;
-  width: 100%;
-  height: auto;
+  height: 26vw;
+  width: 26vw;
 }
 
-/* Play Button Overlay */
+/* Play Button Overlay - centered */
+.featured a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
 .featured .play-button {
   position: absolute;
   top: 50%;
@@ -209,10 +209,11 @@ nav h1 {
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
+
 .featured a:hover .play-button { opacity: 1; }
 
 .featured .play-button i {
-  font-size: 3vw;
+  font-size: 5vw;
   color: var(--accent);
   text-shadow: var(--glow);
   animation: pulse 1.5s infinite alternate;
@@ -223,14 +224,21 @@ nav h1 {
   to { transform: scale(1.2); opacity: 1; }
 }
 
-/* MOTD Overlay */
+/* Accessibility focus styles */
+#games a:focus-visible img,
+.featured a:focus-visible img {
+  outline: 3px solid #fff;
+  outline-offset: 4px;
+}
+
+/* MOTD Overlay - centered popup */
 .motd-overlay {
   position: fixed;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,0.85); /* opacity 0.85 */
   z-index: 2000;
 }
 
@@ -251,7 +259,4 @@ nav h1 {
 
 .motd-box h2 {
   margin: 0 0 0.8em;
-  font-size: clamp(18px, 2.2vw, 28px);
-  font-weight: 800;
-  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
-  -webkit-background-clip
+  font-size: clamp(18px, 2.
