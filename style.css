@@ -124,13 +124,13 @@ nav h1 {
   outline-offset: 2px;
 }
 
-/* Game Grid (Popular Section) */
+/* Popular Section (Game Grid) */
 #games {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12vw, 1fr));
-  gap: 1vw;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1.2vw;
   justify-items: center;
-  margin-top: 0.6vw;
+  margin-top: 1vw;
   padding-bottom: 5vw;
 }
 
@@ -224,13 +224,6 @@ nav h1 {
   to { transform: scale(1.2); opacity: 1; }
 }
 
-/* Accessibility focus styles */
-#games a:focus-visible img,
-.featured a:focus-visible img {
-  outline: 3px solid #fff;
-  outline-offset: 4px;
-}
-
 /* MOTD Overlay - centered popup */
 .motd-overlay {
   position: fixed;
@@ -238,7 +231,7 @@ nav h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.85); /* opacity 0.85 */
+  background: rgba(0,0,0,0.85); /* opacity fixed */
   z-index: 2000;
 }
 
@@ -259,4 +252,6 @@ nav h1 {
 
 .motd-box h2 {
   margin: 0 0 0.8em;
-  font-size: clamp(18px, 2.
+  font-size: clamp(18px, 2.2vw, 28px);
+  font-weight: 800;
+  background:
